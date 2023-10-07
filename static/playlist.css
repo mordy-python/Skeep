@@ -1,0 +1,133 @@
+body {
+  color: #b4b2a7;
+}
+
+.upperContainer {
+  margin-bottom: 100px;
+}
+
+.upperItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  margin-right: 20px;
+}
+
+.button a {
+  text-decoration: none;
+  color: #181f1a;
+  background-color: #1cce30;
+  padding: 10px;
+  border-radius: 50px;
+  transition: 1s;
+}
+
+.button a:hover {
+  background-color: #66ff78;
+  transition: 1s;
+}
+
+.songList {
+  border-top: 1px solid #b4b2a7;
+  padding: 10px;
+}
+
+.songListItems {
+  display: flex;
+  justify-content: space-between;
+}
+
+.songListItems:not(:last-of-type) {
+  border-bottom: 1px solid #b4b2a7;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.leftInfo {
+  align-items: center;
+}
+
+.leftInfo h1 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.rightSide h2 {
+  margin-right: 50px;
+}
+
+.topContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.flashes {
+  width: fit-content;
+  margin: auto;
+}
+
+.flashed-message {
+  border: 1px solid #b4b2a7;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.flashed-message a {
+  color: #b4b2a7;
+}
+
+.flashed-message span {
+  cursor: pointer;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b4b2a7 #353d37;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #353d37;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #b4b2a7;
+  border-radius: 20px;
+  border: 3px solid #353d37;
+}

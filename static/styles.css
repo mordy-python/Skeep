@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("Rubik/Rubik-VariableFont_wght.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  background-color: #353d37;
+}
