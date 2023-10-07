@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playlists</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='playlist.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <!-- upper part -->
+    <div class="upperContainer">
+        <div class="upperItems">
+            <div class="logo">
+                <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='froglogo.svg') }}"
+                        alt="logo of skeep"></a>
+            </div>
+            <div class="title">
+                <h1>Most Skipped Songs</h1>
+            </div>
+            <div class="button">
+                <a href="{{ url_for('archive') }}">Archive all</a>
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flashes">
+        {% for message in messages %}
+        <div class="flashed-message" id="flashed-message">
+            <p>{{message|safe}}</p>
+            <span onclick="removeFlash();">&#10006;</span>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- top -->
+    <div class="topContainer">
+        <div class="topContent">
+            <h1>Songs</h1>
+            <h2>Times skipped</h2>
+        </div>
+    </div>
+
+    <div class="songList">
+        {% for item in items %}
+        <div class="songListItems">
+            <div class="leftSide">
+                <img src="{{item.track.album.images[0].url}}" alt="image of the album">
+                <div class="leftInfo">
+                    <h1>{{item.track.name}}</h1>
+                    <h2>{{item.track.artists[0].name}}</h2>
+                </div>
+            </div>
+
+            <div class="rightSide">
+                <h2>{{item.skipCount}}</h2>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+        function removeFlash() {
+            const flash = document.getElementById("flashed-message");
+            flash.remove();
+        }
+    </script>
+</body>
+
+</html>

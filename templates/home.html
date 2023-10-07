@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+
+    <div class="logContainer">
+        <img class="logo" src="{{url_for('static', filename='froglogo.svg')}}" alt="skeep logo">
+        <img class="logo" src="{{url_for('static', filename='textlogo.svg')}}" alt="skeep logo">
+        <h1>Do you know your most skipped songs?<br>Let's find out!</h1>
+        <div class="button">
+            <a href="{{ url_for('login') }}">Login With Spotify</a>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
