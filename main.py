@@ -229,6 +229,7 @@ def get_user_songs():
 @app.route("/songs")
 def songs():
     users_songs = get_user_songs()
+    users_songs.sort(key=lambda x: x["skipCount"], reverse=True)
 
     return render_template("playlist.html", items=users_songs)
 
